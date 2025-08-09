@@ -1,0 +1,82 @@
+# Backend Build & Test Guide
+
+## Prerequisites
+
+* **Java JDK 11+** installed and `JAVA_HOME` set
+* **Maven** installed globally OR use the Maven Wrapper included (`./mvnw` and `./mvnw.cmd`)
+* Optional: IDE like **IntelliJ IDEA** for code navigation and debugging
+
+---
+
+## Building the Backend
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Then build the project:
+
+```bash
+./mvnw clean package
+```
+
+Or, if Maven is installed globally:
+
+```bash
+mvn clean package
+```
+
+This will:
+
+* Compile the source code
+* Run all tests (unit & integration)
+* Package the application JAR in `backend/target/`
+
+---
+
+## Running the Backend Application
+
+To start the Spring Boot application directly via Maven:
+
+```bash
+./mvnw spring-boot:run
+```
+
+Or
+
+```bash
+mvn spring-boot:run
+```
+
+You can also run the packaged JAR:
+
+```bash
+java -jar target/bihari-rasoi-0.0.1-SNAPSHOT.jar
+```
+
+---
+
+## Running Tests
+
+To run tests separately:
+
+```bash
+./mvnw test
+```
+
+Or
+
+```bash
+mvn test
+```
+---
+
+## Troubleshooting
+
+* **Build fails due to missing dependencies?**
+  Run `./mvnw clean install -U` to force update dependencies.
+
+* **Cannot run `./mvnw` on Windows?**
+  Use `mvnw.cmd` or run via a terminal like Git Bash.
